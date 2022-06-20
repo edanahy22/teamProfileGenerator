@@ -52,6 +52,73 @@ const addEngineer = () => {
         })
 }
 
+const addManager = () => {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "What is your Manager's name?",
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "What is your Manager's ID number?"
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is your Manager's email?",
+            },
+            {
+                type: 'input',
+                name: 'officeNumber',
+                message: "What is your Manager's office number?",
+            }
+        ])
+        .then(answers => {
+            console.log(answers);
+            const manager = new Manager (answers.name, answers.id, answers.email, answers.officeNumber);
+            team.push(manager);
+            console.log(team);
+            createTeam();
+
+        })
+}
+
+const addIntern = () => {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'name',
+                message: "What is your Intern's name?",
+            },
+            {
+                type: 'input',
+                name: 'id',
+                message: "What is your Intern's ID number?"
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is your Intern's email?",
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: "Where does your Intern attend school?",
+            }
+        ])
+        .then(answers => {
+            console.log(answers);
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            team.push(intern);
+            console.log(team);
+            createTeam();
+
+        })
+}
 
 
 const createTeam = () => {

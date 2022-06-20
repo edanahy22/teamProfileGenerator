@@ -1,18 +1,29 @@
 const Employee = require("../lib/Employee");
+const employee= new Employee('Elaine', '123', 'edanahy@gmail.com')
 
 test('can create employee object', ()=>{
     const E = new Employee();
      expect(typeof (E)).toBe('object');
 })
 
-test('can set name via constructor argument', ()=>{
-    const name = 'Elaine';
-    const E = new Employee(name);
-     expect(E.name).toBe(name);
+test('can set constructor values for employee object', ()=>{
+    expect(employee.name).toBe('Elaine');
+    expect(employee.id).toBe('123');
+    expect(employee.email).toBe('edanahy@gmail.com');
 })
 
 test('can get name via getname()', ()=>{
-    const testValue = 'Oliver';
-    const E = new Employee(testValue);
-    expect(E.getName()).toBe(testValue);
+    expect(employee.getName()).toBe('Elaine');
+}) 
+
+test('can get id via getId()', ()=> {
+    expect(employee.getId()).toBe('123');
+})
+
+test('can get email via getEmail()', ()=>{
+    expect(employee.getEmail()).toBe('edanahy@gmail.com');
+}) 
+
+test('can get role via getRole()', ()=>{
+    expect(employee.getRole()).toBe('Employee');
 }) 
