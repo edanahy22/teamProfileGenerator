@@ -27,6 +27,10 @@ The user is prompted with questions to fill out information about their team. Fi
 
 After they have finished entering their team, and html page is generated displaying the team and all of the prompted information. 
 
+![Screenshot](./images/teamGeneratorScreenShot.png)
+
+[Walk-through Video](https://drive.google.com/file/d/1zRndeY9fq4LA-wgkeefp5ysBYEs9FE5N/view)
+
 ## Development
 This application was developed using html, css, javaScript, node, Inquirer, and jest packages. There was a focus on using Object Oriented Programing for this application with the use of constructor objects and classes.
 
