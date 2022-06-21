@@ -17,7 +17,6 @@ const buildTeam = () => {
 
 const render = require("./src/page-template.js");
 
-
 const addEngineer = () => {
     inquirer
         .prompt([

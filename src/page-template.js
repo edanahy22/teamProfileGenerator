@@ -3,6 +3,7 @@ const generateTeam = team => {
     // create the manager html
     const generateManager = manager => {
         return `
+        <div class="col-md-4 col-sm-12">
         <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${manager.getName()}</h2>
@@ -16,11 +17,14 @@ const generateTeam = team => {
             </ul>
         </div>
     </div>
+    </div>
+   
         `;
     };
     // create the html for engineers
     const generateEngineer = engineer => {
         return `
+        <div class="col-md-4 col-sm-12">
         <div class="card employee-card">
     <div class="card-header">
         <h2 class="card-title">${engineer.getName()}</h2>
@@ -30,15 +34,17 @@ const generateTeam = team => {
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-            <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
+            <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
         </ul>
     </div>
+</div>
 </div>
         `;
     };
     // create the html for interns
     const generateIntern = intern => {
         return `
+        <div class="col-md-4 col-sm-12">
         <div class="card employee-card">
     <div class="card-header">
         <h2 class="card-title">${intern.getName()}</h2>
@@ -51,6 +57,7 @@ const generateTeam = team => {
             <li class="list-group-item">School: ${intern.getSchool()}</li>
         </ul>
     </div>
+</div>
 </div>
         `;
     };
@@ -80,25 +87,28 @@ module.exports = team => {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>My Team</title>
+    <title>Team Profile Generator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 team-heading">
+            <div class="col-12 jumbotron mb-3 team-heading" id="title-container">
                 <h1 class="text-center">My Team</h1>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
+        <div class="row team-area d-flex justify-content-center">
+        
                 ${generateTeam(team)}
-            </div>
+        
         </div>
     </div>
 </body>
