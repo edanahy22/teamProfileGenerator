@@ -1,6 +1,6 @@
-// create the team
+// create team
 const generateTeam = team => {
-    // create the manager html
+    // create manager html
     const generateManager = manager => {
         return `
         <div class="col-md-4 col-sm-12">
@@ -21,7 +21,7 @@ const generateTeam = team => {
    
         `;
     };
-    // create the html for engineers
+    // create html for engineers
     const generateEngineer = engineer => {
         return `
         <div class="col-md-4 col-sm-12">
@@ -41,7 +41,7 @@ const generateTeam = team => {
 </div>
         `;
     };
-    // create the html for interns
+    // create html for interns
     const generateIntern = intern => {
         return `
         <div class="col-md-4 col-sm-12">
